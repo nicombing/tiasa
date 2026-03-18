@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface SectionProps {
   id: string;
-  title: string;
-  description: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
   image: string;
   reverse?: boolean;
   buttonText?: string;
@@ -85,7 +85,7 @@ export default function Section({
           <div ref={imageRef} className="section-image slide-in-left">
             <Image 
               src={image} 
-              alt={title}
+              alt={typeof title === 'string' ? title : id}
               width={720}
               height={720}
               style={{ objectFit: 'cover' }}
@@ -93,7 +93,7 @@ export default function Section({
           </div>
           <div ref={contentRef} className="section-text slide-in-right">
             <h2 className="section-title">{title}</h2>
-            <p className="section-description">{description}</p>
+            <div className="section-description">{description}</div>
             {buttonText && (
               <div className="btn-container">
                 <Link href={buttonLink} className={`btn ${accentButton ? 'btn--accent' : ''}`}>

@@ -1,4 +1,5 @@
 import { Chivo, Chewy } from 'next/font/google';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
@@ -24,8 +25,12 @@ const chewy = Chewy({
 const sections = [
   {
     id: 'about',
-    title: 'Old traditions, fresh beginnings.',
-    description: "From celebrations to everyday moments, we've been your trusted partner in creating memories that last. Our commitment to quality and innovation sets us apart in everything we do.",
+    title: 'Anak sudah les bertahun-tahun, tapi masih malu bicara?',
+    description: (
+      <>
+        Kebanyakan metode hanya fokus pada nilai ujian dan tata bahasa yang kaku, menciptakan <i>Silent Learners</i> (Anak yang pasif). Tiasa English hadir di Cisarua dengan pendekatan berbeda: Kami memprioritaskan Kepercayaan Diri di atas segalanya.
+      </>
+    ),
     image: '/ima/block1.png',
     reverse: false,
     buttonText: 'Learn More',
@@ -34,9 +39,35 @@ const sections = [
   },
   {
     id: 'services',
-    title: 'Discover our world.',
-    description: "Think of our services as the foundation of something extraordinary. Whether you're looking for inspiration, expertise, or partnership, we're here to make it happen.",
-    image: 'https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/4d1cbdc3-0601-4c48-b328-09ff93d8953b/New+Flavors.gif',
+    title: 'Rahasia Kami: Jago Baca & Berani Cerita.',
+    description: (
+      <div className="flex flex-col gap-6 mt-8">
+        <div className="flex items-center gap-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+          <div className="flex-shrink-0 w-24 h-24 bg-[#faf8f5] rounded-full flex items-center justify-center p-4 group-hover:bg-white transition-colors">
+            <Image src="/ima/services1.png" alt="Phonics icon" width={80} height={80} className="object-contain" />
+          </div>
+          <div>
+            <h3 className="font-display text-xl mb-1 text-black">Phonics: Kunci Jago Baca.</h3>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Kami tidak menyuruh anak menghafal kata. Kami mengajarkan 42 bunyi suara bahasa Inggris. <b>Hasilnya?</b> Anak bisa merangkai dan membaca buku cerita apa pun secara mandiri!
+            </p>
+          </div>
+        </div>
+        
+        <div className="flex items-center gap-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+          <div className="flex-shrink-0 w-24 h-24 bg-[#faf8f5] rounded-full flex items-center justify-center p-4 group-hover:bg-white transition-colors">
+            <Image src="/ima/services2.png" alt="SFL icon" width={80} height={80} className="object-contain" />
+          </div>
+          <div>
+            <h3 className="font-display text-xl mb-1 text-black">SFL: Kekuatan Berekspresi.</h3>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Kami tidak mengajarkan rumus "Subject + Verb". Kami mengajarkan fungsi: bagaimana cara menyebutkan nama benda, menceritakan perasaan, dan menjelaskan aktivitas sehari-hari dengan natural.
+            </p>
+          </div>
+        </div>
+      </div>
+    ),
+    image: '/ima/block2.png',
     reverse: true,
     buttonText: 'Explore',
     buttonLink: '#contact',
