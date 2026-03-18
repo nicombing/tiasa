@@ -26,7 +26,7 @@ const sections = [
     id: 'about',
     title: 'Old traditions, fresh beginnings.',
     description: "From celebrations to everyday moments, we've been your trusted partner in creating memories that last. Our commitment to quality and innovation sets us apart in everything we do.",
-    image: 'https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/d6f78351-7110-4362-8807-bb6cb6ef65db/Hearts.gif',
+    image: '/ima/block1.png',
     reverse: false,
     buttonText: 'Learn More',
     buttonLink: '#contact',
