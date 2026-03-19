@@ -53,7 +53,7 @@ const sections = [
             </p>
           </div>
         </div>
-        
+
         <div className="flex items-center gap-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
           <div className="flex-shrink-0 w-24 h-24 bg-[#faf8f5] rounded-full flex items-center justify-center p-4 group-hover:bg-white transition-colors">
             <Image src="/ima/services2.png" alt="SFL icon" width={80} height={80} className="object-contain" />
@@ -77,7 +77,7 @@ const sections = [
     id: 'quality',
     title: 'Craft like the masters.',
     description: "Quality isn't just a word for us—it's our promise. Every detail matters, every moment counts, and every experience is designed to exceed your expectations.",
-    image: 'https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/dc17e2bf-4553-4e91-8058-30d7b45a27a5/Morsels.gif',
+    image: '/ima/block4.png',
     reverse: false,
     buttonText: 'Get Started',
     buttonLink: '#contact',
@@ -86,8 +86,8 @@ const sections = [
   {
     id: 'innovation',
     title: 'Same vision, new horizons.',
-    description: "Innovation drives us forward while staying true to our roots. We're constantly evolving, always improving, and forever committed to bringing you the best.",
-    image: 'https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/4a73d7b4-33ad-4ed3-a2bb-3f4c33ecd3b0/Holiday+Food+Colors.png',
+    description: "Tinggalkan buku raport yang membosankan. Melalui Tiasa Digital Tracker, orangtua akan menerima notifikasi mingguan berisi perkembangan anak anda. orangtua akan bisa melihat langsung kata apa yang sudah mereka kuasai dan seberapa lantang suara mereka hari ini.",
+    image: '/ima/block6.png',
     reverse: true,
     buttonText: 'Discover',
     buttonLink: '#contact',
