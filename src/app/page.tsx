@@ -33,7 +33,7 @@ const sections = [
     ),
     image: '/ima/block1.png',
     reverse: false,
-    buttonText: 'Learn More',
+    buttonText: 'Ayo Bergabung',
     buttonLink: '#contact',
     accentButton: true,
   },
@@ -79,21 +79,21 @@ const sections = [
     description: "Quality isn't just a word for us—it's our promise. Every detail matters, every moment counts, and every experience is designed to exceed your expectations.",
     image: '/ima/block4.png',
     reverse: false,
-    buttonText: 'Get Started',
+    buttonText: 'Ayo Bergabung',
     buttonLink: '#contact',
     accentButton: true,
   },
   {
     id: 'innovation',
-    title: 'Same vision, new horizons.',
+    title: 'Pantau Keberanian Anak Anda Langsung dari Layar HP',
     description: "Tinggalkan buku raport yang membosankan. Melalui Tiasa Digital Tracker, orangtua akan menerima notifikasi mingguan berisi perkembangan anak anda. orangtua akan bisa melihat langsung kata apa yang sudah mereka kuasai dan seberapa lantang suara mereka hari ini.",
     image: '/ima/block6.png',
     reverse: true,
-    buttonText: 'Discover',
+    buttonText: 'Ayo Bergabung',
     buttonLink: '#contact',
     accentButton: false,
   },
-  {
+  /*{
     id: 'testimonials',
     title: 'Words that inspire us.',
     description: "We're grateful for the trust you place in us. Your stories, your feedback, and your support drive us to keep raising the bar and deliver excellence in everything we do.",
@@ -102,7 +102,7 @@ const sections = [
     buttonText: 'Connect',
     buttonLink: '#contact',
     accentButton: true,
-  },
+  },*/
 ];
 
 export default function Home() {
