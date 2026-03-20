@@ -8,7 +8,7 @@ export default function CTASection({ onCTA }: { onCTA?: () => void }) {
       <div className="cta-content fade-in">
         <h2 className="cta-title">Ready to start your journey?</h2>
         <p className="cta-description">
-          We'd love to hear from you. Whether you have a question or just want to say hello, we're here for you.
+          We&apos;d love to hear from you. Whether you have a question or just want to say hello, we&apos;re here for you.
         </p>
         {onCTA ? (
           <button 

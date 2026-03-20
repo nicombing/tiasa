@@ -65,7 +65,7 @@ const sections = [
           <div>
             <h3 className="font-display text-xl mb-1 text-black">SFL: Kekuatan Berekspresi.</h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Kami tidak mengajarkan rumus "Subject + Verb". Kami mengajarkan fungsi: bagaimana cara menyebutkan nama benda, menceritakan perasaan, dan menjelaskan aktivitas sehari-hari dengan natural.
+              Kami tidak mengajarkan rumus &quot;Subject + Verb&quot;. Kami mengajarkan fungsi: bagaimana cara menyebutkan nama benda, menceritakan perasaan, dan menjelaskan aktivitas sehari-hari dengan natural.
             </p>
           </div>
         </div>

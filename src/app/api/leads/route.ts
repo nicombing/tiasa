@@ -27,8 +27,11 @@ export async function POST(request: Request) {
     if (error) throw error;
 
     return NextResponse.json({ success: true, id: data.id }, { status: 201 });
-  } catch (error: any) {
-    console.error('Error inserting lead:', error);
-    return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
+  } catch (err) {
+    console.error('Error inserting lead:', err);
+    return NextResponse.json({ 
+      error: 'Internal Server Error', 
+      details: err instanceof Error ? err.message : 'Unknown error' 
+    }, { status: 500 });
   }
 }
