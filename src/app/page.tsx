@@ -110,7 +110,7 @@ export default function Home() {
     <div className={`${chivo.variable} ${chewy.variable}`} style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
       <Header />
       <main>
-        <Hero />
+        <Hero onCTA={openModal} />
         {sections.map((section) => (
           <Section key={section.id} {...section} onCTA={openModal} />
         ))}

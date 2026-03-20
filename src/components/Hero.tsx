@@ -3,7 +3,11 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-export default function Hero() {
+interface HeroProps {
+  onCTA?: () => void;
+}
+
+export default function Hero({ onCTA }: HeroProps) {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,10 +47,7 @@ export default function Hero() {
           Experience excellence in every detail. Where quality meets passion, and dreams become reality.
         </p>
         <button 
-          onClick={() => {
-            const contactSection = document.getElementById('about');
-            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-          }}
+          onClick={onCTA}
           className="btn btn--accent mt-8"
         >
           Ayo Bergabung
