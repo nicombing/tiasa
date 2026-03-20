@@ -39,8 +39,6 @@ export default function Section({
       const windowHeight = window.innerHeight;
       
       if (rect.top < windowHeight && rect.bottom > 0) {
-        const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
-        
         // Parallax effect for the section
         const yOffset = (rect.top - windowHeight / 2) * 0.1;
         if (contentRef.current) {

@@ -43,6 +43,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
         setError(data.error || 'Terjadi kesalahan. Silakan coba lagi.');
       }
     } catch (err) {
+      console.error('Registration error:', err);
       setError('Gagal mengirim data. Periksa koneksi Anda.');
     } finally {
       setIsSubmitting(false);

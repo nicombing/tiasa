@@ -30,7 +30,9 @@ export default function TeacherDashboard() {
     fetch('/api/students')
       .then((res) => res.json())
       .then((data) => setStudents(data))
-      .catch((err) => console.error('Error fetching students:', err));
+      .catch((err) => {
+        console.error('Error fetching students:', err);
+      });
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -82,6 +84,7 @@ export default function TeacherDashboard() {
         setMessage({ type: 'error', text: data.error || 'Terjadi kesalahan.' });
       }
     } catch (err) {
+      console.error('Error submitting session:', err);
       setMessage({ type: 'error', text: 'Gagal mengirim data. Periksa koneksi.' });
     } finally {
       setIsSubmitting(false);
