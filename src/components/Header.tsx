@@ -68,7 +68,7 @@ export default function Header() {
           <button 
             className="mobile-menu-btn relative z-[1001] text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Buka menu"
           >
             <svg viewBox="0 0 24 18" className="w-6 h-6" fill="currentColor">
               <rect x="0" y="0" width="24" height="2"/>

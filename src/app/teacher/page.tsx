@@ -98,7 +98,7 @@ export default function TeacherDashboard() {
       <main className="max-w-2xl mx-auto px-4 py-32">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-[#2D5A27] mb-2">Teacher Dashboard</h1>
+            <h1 className="text-3xl font-bold text-[#2D5A27] mb-2">Dashboard Guru</h1>
             <p className="text-gray-600">Catat perkembangan setiap murid di sesi hari ini.</p>
           </div>
 
@@ -157,7 +157,7 @@ export default function TeacherDashboard() {
 
             {/* Phonics Checklist */}
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-gray-800 border-b pb-2">Phonics Checklist</h3>
+              <h3 className="text-lg font-bold text-gray-800 border-b pb-2">Daftar Phonics</h3>
               <div className="grid grid-cols-3 gap-3">
                 {PHONICS_SOUNDS.map((sound) => (
                   <button
@@ -178,7 +178,7 @@ export default function TeacherDashboard() {
 
             {/* YouTube Spotlight */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700">YouTube Unlisted URL</label>
+              <label className="block text-sm font-semibold text-gray-700">URL YouTube (Unlisted)</label>
               <input
                 type="url"
                 name="youtube_url"
