@@ -41,7 +41,7 @@ export default function Hero({ onCTA }: HeroProps) {
       
       <div className="hero-content fade-in">
         <h1 className="hero-title">
-          TAI<strong>SA</strong>
+          TIA<strong>SA</strong>
         </h1>
         <p className="hero-subtitle">
           Wujudkan impian anak Anda bersama kami. Kualitas terbaik, bimbingan penuh kasih sayang, dan masa depan cerah.
