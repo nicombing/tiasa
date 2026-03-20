@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
+  { href: '#about', label: 'Tentang' },
+  { href: '#services', label: 'Layanan' },
 ];
 
 export default function Header() {
@@ -47,7 +47,7 @@ export default function Header() {
           
           <nav className="header-nav">
             <Link href="#contact" className={`header-nav-item ${!isScrolled ? 'text-white' : ''}`}>
-              Contact
+              Kontak
             </Link>
           </nav>
         </div>
@@ -86,9 +86,9 @@ export default function Header() {
           >
             &times;
           </button>
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          <Link href="#about" onClick={() => setMobileMenuOpen(false)}>Tentang</Link>
+          <Link href="#services" onClick={() => setMobileMenuOpen(false)}>Layanan</Link>
+          <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Kontak</Link>
         </div>
       </div>
     </>

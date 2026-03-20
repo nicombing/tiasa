@@ -44,7 +44,7 @@ export default function Hero({ onCTA }: HeroProps) {
           TAI<strong>SA</strong>
         </h1>
         <p className="hero-subtitle">
-          Experience excellence in every detail. Where quality meets passion, and dreams become reality.
+          Wujudkan impian anak Anda bersama kami. Kualitas terbaik, bimbingan penuh kasih sayang, dan masa depan cerah.
         </p>
         <button 
           onClick={onCTA}

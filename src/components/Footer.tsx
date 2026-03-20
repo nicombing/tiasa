@@ -19,7 +19,7 @@ export default function Footer() {
         
         <div className="footer-info mb-10 space-y-1">
           <p className="text-[#9ea4b0] text-[15px] font-primary">
-            © 2023 Tiasa English.
+            © 2024 Tiasa English.
           </p>
           <p className="text-[#9ea4b0] text-[15px] font-primary">
             Membangun Masa Depan Melalui Bahasa.
