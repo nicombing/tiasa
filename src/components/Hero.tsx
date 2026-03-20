@@ -42,6 +42,15 @@ export default function Hero() {
         <p className="hero-subtitle">
           Experience excellence in every detail. Where quality meets passion, and dreams become reality.
         </p>
+        <button 
+          onClick={() => {
+            const contactSection = document.getElementById('about');
+            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="btn btn--accent mt-8"
+        >
+          Ayo Bergabung
+        </button>
       </div>
       
       <div className="scroll-indicator">

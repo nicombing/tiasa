@@ -1,3 +1,6 @@
+'use client';
+
+import React, { useState } from 'react';
 import { Chivo, Chewy } from 'next/font/google';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -6,6 +9,7 @@ import Section from '@/components/Section';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import NavigationDots from '@/components/NavigationDots';
+import RegistrationModal from '@/components/RegistrationModal';
 import './globals.css';
 
 const chivo = Chivo({
@@ -34,7 +38,7 @@ const sections = [
     image: '/ima/block1.png',
     reverse: false,
     buttonText: 'Ayo Bergabung',
-    buttonLink: '#contact',
+    buttonLink: '#',
     accentButton: true,
   },
   {
@@ -69,18 +73,18 @@ const sections = [
     ),
     image: '/ima/block2.png',
     reverse: true,
-    buttonText: 'Explore',
-    buttonLink: '#contact',
+    buttonText: 'Ayo Bergabung',
+    buttonLink: '#',
     accentButton: false,
   },
   {
     id: 'quality',
-    title: 'Craft like the masters.',
-    description: "Quality isn't just a word for us—it's our promise. Every detail matters, every moment counts, and every experience is designed to exceed your expectations.",
+    title: 'Membangun Masa Depan Cerah.',
+    description: "Kualitas bukan sekadar kata bagi kami—itu adalah janji kami. Setiap detail sangat berarti, setiap momen berharga, dan setiap pengalaman dirancang untuk melampaui harapan Anda.",
     image: '/ima/block4.png',
     reverse: false,
     buttonText: 'Ayo Bergabung',
-    buttonLink: '#contact',
+    buttonLink: '#',
     accentButton: true,
   },
   {
@@ -90,34 +94,32 @@ const sections = [
     image: '/ima/block6.png',
     reverse: true,
     buttonText: 'Ayo Bergabung',
-    buttonLink: '#contact',
+    buttonLink: '#',
     accentButton: false,
   },
-  /*{
-    id: 'testimonials',
-    title: 'Words that inspire us.',
-    description: "We're grateful for the trust you place in us. Your stories, your feedback, and your support drive us to keep raising the bar and deliver excellence in everything we do.",
-    image: 'https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/224a9585-2dc2-4928-b69d-c5d72bf1fc20/Promix-Whey-Promix-Puff-Bar-Birthday-Cake-2-2+copy.png',
-    reverse: false,
-    buttonText: 'Connect',
-    buttonLink: '#contact',
-    accentButton: true,
-  },*/
 ];
 
+
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className={`${chivo.variable} ${chewy.variable}`} style={{ fontFamily: 'var(--font-chivo), sans-serif' }}>
       <Header />
       <main>
         <Hero />
         {sections.map((section) => (
-          <Section key={section.id} {...section} />
+          <Section key={section.id} {...section} onCTA={openModal} />
         ))}
-        <CTASection />
+        <CTASection onCTA={openModal} />
       </main>
       <Footer />
       <NavigationDots />
+      
+      <RegistrationModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

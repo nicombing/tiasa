@@ -13,6 +13,7 @@ interface SectionProps {
   buttonText?: string;
   buttonLink?: string;
   accentButton?: boolean;
+  onCTA?: () => void;
 }
 
 export default function Section({
@@ -24,6 +25,7 @@ export default function Section({
   buttonText,
   buttonLink = '#contact',
   accentButton = false,
+  onCTA,
 }: SectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -96,9 +98,18 @@ export default function Section({
             <div className="section-description">{description}</div>
             {buttonText && (
               <div className="btn-container">
-                <Link href={buttonLink} className={`btn ${accentButton ? 'btn--accent' : ''}`}>
-                  {buttonText}
-                </Link>
+                {onCTA ? (
+                  <button 
+                    onClick={onCTA}
+                    className={`btn ${accentButton ? 'btn--accent' : ''}`}
+                  >
+                    {buttonText}
+                  </button>
+                ) : (
+                  <Link href={buttonLink} className={`btn ${accentButton ? 'btn--accent' : ''}`}>
+                    {buttonText}
+                  </Link>
+                )}
               </div>
             )}
           </div>
