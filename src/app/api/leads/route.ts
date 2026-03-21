@@ -4,9 +4,16 @@ import { supabase } from '@/lib/db';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { student_name, student_grade, english_experience, parent_name, whatsapp_number } = body;
+    const { 
+      student_name, 
+      student_grade, 
+      parent_name, 
+      whatsapp_number,
+      student_address,
+      student_dob 
+    } = body;
 
-    if (!student_name || !student_grade || !english_experience || !parent_name || !whatsapp_number) {
+    if (!student_name || !student_grade || !parent_name || !whatsapp_number || !student_address || !student_dob) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -16,9 +23,10 @@ export async function POST(request: Request) {
         {
           student_name,
           student_grade: parseInt(student_grade),
-          english_experience,
           parent_name,
           whatsapp_number,
+          student_address,
+          student_dob,
         },
       ])
       .select('id')

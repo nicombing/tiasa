@@ -13,6 +13,8 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
     student_grade: '1',
     parent_name: '',
     whatsapp_number: '',
+    student_address: '',
+    student_dob: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -130,11 +132,36 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose }
                 />
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+                <input
+                  required
+                  type="text"
+                  name="student_address"
+                  value={formData.student_address}
+                  onChange={handleChange}
+                  placeholder="Contoh: Jl. Raya Puncak No. 123"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A27] focus:border-transparent outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                <input
+                  required
+                  type="date"
+                  name="student_dob"
+                  value={formData.student_dob}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D5A27] focus:border-transparent outline-none"
+                />
+              </div>
+
               {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
               <button
                 type="submit"
-                disabled={isSubmitting || !formData.student_name || !formData.parent_name || !formData.whatsapp_number}
+                disabled={isSubmitting || !formData.student_name || !formData.parent_name || !formData.whatsapp_number || !formData.student_address || !formData.student_dob}
                 className="w-full bg-[#2D5A27] text-white py-3 rounded-xl font-bold hover:bg-[#23481F] transition-colors disabled:opacity-50 mt-6"
               >
                 {isSubmitting ? 'Mengirim...' : 'Daftar Sekarang'}
