@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Tiasa - Experience Excellence",
   description: "Tiasa - Experience excellence in every detail. Where quality meets passion, and dreams become reality.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
