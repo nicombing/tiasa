@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 interface HeroProps {
@@ -9,6 +9,7 @@ interface HeroProps {
 
 export default function Hero({ onCTA }: HeroProps) {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,17 +19,13 @@ export default function Hero({ onCTA }: HeroProps) {
       }
     };
 
-    // Add visible class after a short delay to trigger entrance animation
-    const timer = setTimeout(() => {
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent) heroContent.classList.add('visible');
+    // Trigger entrance animation after mount
+    setTimeout(() => {
+      setIsVisible(true);
     }, 100);
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timer);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -48,7 +45,7 @@ export default function Hero({ onCTA }: HeroProps) {
       </div>
       <div className="hero-overlay" />
       
-      <div className="hero-content fade-in">
+      <div className={`hero-content fade-in ${isVisible ? 'visible' : ''}`}>
         <h1 className="hero-title">
           TIA<strong>SA</strong>
         </h1>
