@@ -18,8 +18,17 @@ export default function Hero({ onCTA }: HeroProps) {
       }
     };
 
+    // Add visible class after a short delay to trigger entrance animation
+    const timer = setTimeout(() => {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) heroContent.classList.add('visible');
+    }, 100);
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (

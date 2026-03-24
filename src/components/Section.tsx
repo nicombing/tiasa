@@ -60,8 +60,20 @@ export default function Section({
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 } // Lower threshold for better mobile compatibility
     );
+
+    // Fallback timer to ensure content becomes visible even if observer fails
+    const fallbackTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        const elements = sectionRef.current.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+        elements.forEach((el) => {
+          if (!el.classList.contains('visible')) {
+            el.classList.add('visible');
+          }
+        });
+      }
+    }, 1500); // 1.5s fallback
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
@@ -73,6 +85,7 @@ export default function Section({
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(fallbackTimer);
     };
   }, []);
 

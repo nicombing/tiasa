@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const navItems = [
-  { href: '#hero', label: 'Beranda' },
-  { href: '#about', label: 'Tentang' },
-  { href: '#services', label: 'Layanan' },
-  { href: '#quality', label: 'Kualitas' },
-  { href: '#innovation', label: 'Inovasi' },
-  { href: '#testimonials', label: 'Cerita' },
-  { href: '#contact', label: 'Kontak' },
+  { href: '#hero', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#services', label: 'Services' },
+  { href: '#quality', label: 'Quality' },
+  { href: '#innovation', label: 'Innovation' },
+  { href: '#testimonials', label: 'Stories' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function NavigationDots() {
