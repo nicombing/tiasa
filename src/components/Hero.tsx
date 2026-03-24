@@ -41,7 +41,7 @@ export default function Hero({ onCTA }: HeroProps) {
   }, []);
 
   return (
-    <section id="hero" className="hero-section" style={{ marginTop: '-100px', paddingTop: '100px', height: 'calc(var(--vh, 1vh) * 100)' }}>
+    <section id="hero" className="hero-section" style={{ marginTop: '-100px', paddingTop: '100px', height: 'calc(var(--vh, 1vh) * 100 + 100px)' }}>
       <div 
         ref={parallaxRef}
         className="hero-background parallax-layer"
