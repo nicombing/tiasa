@@ -165,6 +165,7 @@ html {
 .hero-section {
   position: relative;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   min-height: 600px;
   display: flex;
   align-items: center;
