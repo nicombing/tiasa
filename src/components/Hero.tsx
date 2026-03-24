@@ -12,6 +12,15 @@ export default function Hero({ onCTA }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Set --vh CSS variable to actual viewport height
+    // Most compatible fix for mobile browsers (including Mi Browser)
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+
     const handleScroll = () => {
       if (parallaxRef.current) {
         const scrolled = window.scrollY;
@@ -25,11 +34,14 @@ export default function Hero({ onCTA }: HeroProps) {
     }, 100);
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', setVh);
+    };
   }, []);
 
   return (
-    <section id="hero" className="hero-section" style={{ marginTop: '-100px', paddingTop: '100px' }}>
+    <section id="hero" className="hero-section" style={{ marginTop: '-100px', paddingTop: '100px', height: 'calc(var(--vh, 1vh) * 100)' }}>
       <div 
         ref={parallaxRef}
         className="hero-background parallax-layer"
